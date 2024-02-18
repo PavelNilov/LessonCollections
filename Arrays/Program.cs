@@ -70,6 +70,15 @@ string[] notToms = Array.FindAll(people, item => !item.Equals("Tom"));
 
 Array.ForEach(notToms, item => Console.Write(item + "\t"));
 
+//5 Сравнение массивов
+Console.WriteLine("\n\nСравнение 2х массивов");
+int[] array1 = new int[] {1, 2};
+int[] array2 = new int[] {1, 2};
+
+bool arraysAreEqual = array1.SequenceEqual(array2);
+
+Console.WriteLine("Массивы совпадают:" + arraysAreEqual);
+
 
 /*live*/
 //Задачи:
