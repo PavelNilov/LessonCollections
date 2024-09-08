@@ -1,17 +1,30 @@
-﻿//1 Одномерный массив
+﻿using System.Collections;
+
+//1 Одномерный массив
+
 //1.1 Инициализация массива(значения по умолчанию)
-int[] array = new int[3];
+//int[] array = new int[3];
+
 //1.2 Инициализация массива конкретными значениями
-//int[] array = new int[] { 1, 2 };
+int[] array = new int[] { 1, 2 };
+IList list = array;
+IEnumerable numerable = array;
+
+//1.3 Неявная инициализация массивов
+int[] a = new/*тип не указан*/ [] { 1, 10, 100, 1000 };                      // int[]
+var b = new/*тип не указан*/[] { "hello", null, "world" };                   // string[]
 
 Console.WriteLine("Вывод одномерного массива");
 
 for (int i = 0; i < array.Length; i++)
     Console.Write(array[i] + "\t");
 
+//1.3 Ранг массива
+int arrayRank = array.Rank;
+
 //2 Двумерный массив
 //2.1 Инициализация массива(значения по умолчанию)
-int[,] multiDimensionalArray = new int[3,3];
+int[,] multiDimensionalArray = new int[3,4];
 multiDimensionalArray[0,0] = 1;
 multiDimensionalArray[2, 2] = 10;
 //2.2 Инициализация массива конкретными значениями
@@ -52,12 +65,12 @@ string[] people = { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
 
 //4.1 Поиск элементов в массиве
 Console.WriteLine("\nПоиск элементов в массиве");
-Console.WriteLine (Array.IndexOf(people, "Tom"/*Tommy*/));
+Console.WriteLine (Array.IndexOf(people, "Bobx"/*Tommy*/));
 
 //4.2 Сортировка в массиве
 Console.WriteLine("\nСортировка в массиве");
 Array.Sort(people);
-Console.WriteLine(Array.IndexOf(people, "Tom"));
+//Console.WriteLine(Array.IndexOf(people, "Tom"));
 
 //4.3 Операция foreach и вывод массива
 Console.WriteLine("\nОперация foreach и вывод массива");
@@ -72,7 +85,7 @@ Array.ForEach(notToms, item => Console.Write(item + "\t"));
 
 //5 Сравнение массивов
 Console.WriteLine("\n\nСравнение 2х массивов");
-int[] array1 = new int[] {1, 2};
+int[] array1 = new int[] {1};
 int[] array2 = new int[] {1, 2};
 
 bool arraysAreEqual = array1.SequenceEqual(array2);
@@ -83,4 +96,4 @@ Console.WriteLine("Массивы совпадают:" + arraysAreEqual);
 /*live*/
 //Задачи:
 //Количество положительных элеметов массива
-//int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };
+/*int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };*/

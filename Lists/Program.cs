@@ -14,8 +14,8 @@ people.ForEach(item => Console.Write(item + "\t"));
 //1.3 Инициализация списка c заданием начальной емкости 
 List<int> numbers = new List<int>(16);
 
-/*for(int i = 0; i < numbers.Capacity; i++)
-    numbers.Add(i);*/
+for(int i = 0; i < numbers.Capacity; i++)
+    numbers.Add(i);
 
 //Вывод списка
 Console.WriteLine("\n\nВывод списка numbers");
@@ -100,3 +100,10 @@ persons.ForEach(item => Console.WriteLine(item.Id + "\t" + item.Name + "\t" + it
 Console.WriteLine("\n\nПоиск элемента в списке");
 Console.WriteLine("James = " + people.IndexOf("James"));
 Console.WriteLine("Alice = " + people.IndexOf("Alice"));
+
+List<string> firstList = new List<string> { "A", "B", "C" };
+List<string> secondList = new List<string> { "B", "C", "D" };
+
+var thirdList = firstList.Intersect(secondList);
+
+;

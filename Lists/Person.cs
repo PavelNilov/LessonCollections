@@ -14,7 +14,7 @@ namespace Lists
 
         public int CompareTo(Person other)
         {
-            return this.Id - other.Id;
+            return this.Name.CompareTo(other.Name);
         }
 
         public bool Equals(Person other)
