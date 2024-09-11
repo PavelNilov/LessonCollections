@@ -14,6 +14,12 @@ IEnumerable numerable = array;
 int[] a = new/*тип не указан*/ [] { 1, 10, 100, 1000 };                      // int[]
 var b = new/*тип не указан*/[] { "hello", null, "world" };                   // string[]
 
+//1.4 Инициализация посредством статического метода CreateInstance класса Array
+Array arr = Array.CreateInstance(typeof(int), 5);
+arr.SetValue(1, 0);
+arr.SetValue(2, 1);
+int[] arrToInt = (int[])arr;
+
 Console.WriteLine("Вывод одномерного массива");
 
 for (int i = 0; i < array.Length; i++)
@@ -25,8 +31,9 @@ int arrayRank = array.Rank;
 //2 Двумерный массив
 //2.1 Инициализация массива(значения по умолчанию)
 int[,] multiDimensionalArray = new int[3,4];
-multiDimensionalArray[0,0] = 1;
+multiDimensionalArray[0, 0] = 1;
 multiDimensionalArray[2, 2] = 10;
+
 //2.2 Инициализация массива конкретными значениями
 //int[,] multiDimensionalArray = new int[2,3] { { 1, 2, 3 }, { 4, 5, 6 } };
 
@@ -95,5 +102,5 @@ Console.WriteLine("Массивы совпадают:" + arraysAreEqual);
 
 /*live*/
 //Задачи:
-//Количество положительных элеметов массива
+//Количество положительных элеметов массива(без ноля)
 /*int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };*/

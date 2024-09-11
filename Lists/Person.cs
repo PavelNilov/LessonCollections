@@ -24,6 +24,7 @@ namespace Lists
 
         public override int GetHashCode()
         {
+            //return HashCode.Combine(Name, Age, Id);
             return 0;
         }
     }

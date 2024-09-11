@@ -12,14 +12,15 @@ Console.WriteLine("Вывод списка people");
 people.ForEach(item => Console.Write(item + "\t"));
 
 //1.3 Инициализация списка c заданием начальной емкости 
-List<int> numbers = new List<int>(16);
+List<int> numbers = new List<int>(16);                  //Задается свойство Capacity = 16
 
-for(int i = 0; i < numbers.Capacity; i++)
-    numbers.Add(i);
+for(int i = 0; i < numbers.Count; i++)
+    numbers.Add(i);                                     //Показать исходный код метода Add
 
 //Вывод списка
 Console.WriteLine("\n\nВывод списка numbers");
 numbers.ForEach(item => Console.Write(item + "\t"));
+
 
 //2.1 Добавление элемента в список
 people.Add("Alice");
@@ -76,6 +77,8 @@ Console.WriteLine("\n\nСортировка списка с помощью ко�
 persons.Sort(new PersonAgeComparer());
 persons.ForEach(item => Console.WriteLine(item.Id + "\t" + item.Name + "\t" + item.Age));
 
+//5.1.2.4 Сортировка Comparison
+persons.Sort((item, item2) => item.Id.CompareTo(item2.Id));
 
 //6.1 Удаление дубликатов в списке
 //6.1.1 Удаление дубликатов в списке (по умолчанию)
@@ -106,4 +109,9 @@ List<string> secondList = new List<string> { "B", "C", "D" };
 
 var thirdList = firstList.Intersect(secondList);
 
-;
+
+/*live*/
+//Задачи:
+//1. Проинициализируйте List размером 16 и заполните его данными.
+//2. Просортируйте члены List<string> в порядке, обратному алфавитному (можно через реализацию: IComparer, Comparison, etc.)
+//3. Найдите пересечение множеств, указанных выше.
