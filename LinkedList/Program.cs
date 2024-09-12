@@ -1,8 +1,8 @@
 ﻿//Связный список
-//1 Инициализация
-//1.1 Пустой св.список
 using LinkedList;
 
+//1 Инициализация
+//1.1 Пустой св.список
 LinkedList<string> empty = new LinkedList<string>();
 
 //1.2 Инициализация св.списка
@@ -18,6 +18,16 @@ for(LinkedListNode<string> currentNode = people.First; currentNode != null; curr
 Console.WriteLine("\n\nВывод значений свзяного списка(обратный порядок):");
 for (LinkedListNode<string> currentNode = people.Last; currentNode != null; currentNode = currentNode.Previous)
     Console.Write(currentNode.Value + "\t");
+
+//2.3 Вывод элементов с помощью while (просто для разнообразия)
+Console.WriteLine("\n\nВывод значений свзяного списка(while):");
+LinkedListNode<string> currentNodeW = people.First;
+while (currentNodeW != null)
+{
+    Console.Write(currentNodeW.Value + "\t");
+    currentNodeW = currentNodeW.Next;
+}
+
 
 //3 вставка элемента
 //3.1 После выбранной ноды
