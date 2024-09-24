@@ -10,6 +10,9 @@ int[] array = new int[] { 1, 2 };
 IList list = array;
 IEnumerable numerable = array;
 
+//1.2' Инициализация массива конкретными значениями(другой вариант)
+int[] scores = [97, 92, 81, 60];
+
 //1.3 Неявная инициализация массивов
 int[] a = new/*тип не указан*/ [] { 1, 10, 100, 1000 };                      // int[]
 var b = new/*тип не указан*/[] { "hello", null, "world" };                   // string[]
